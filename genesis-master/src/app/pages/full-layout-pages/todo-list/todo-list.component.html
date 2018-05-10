@@ -1,0 +1,74 @@
+<!-- <h5>Welcome to the new age!</h5> -->
+<div class="row ">
+    <div class="col-md-12">
+        <div class="card mainBackground">
+            <div class="card-header">
+                <h4 class="card-title whiteFont fontSegui" id="hidden-label-round-controls">todo list</h4>
+            </div>
+            <div class="card-body">
+                <div class="px-3">
+                    <form class="form ng-untouched ng-pristine ng-valid" novalidate="">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="form-group col-5 mb-2">
+                                    <input [(ngModel)]="todoTitle" class="form-control round font24 " id="todoTitle" name="todo" placeholder="Task" type="text">
+                                </div>
+                                <div class="form-group col-12 mb-2">
+                                    <input [(ngModel)]="todoDescription" class="form-control round font24" id="todoDescription" name="description" placeholder="Description"
+                                        type="text">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button (click)="addTodoNote()" class="btn btn-raised btn-bg whiteFont" type="button">
+                                ADD TO LIST
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <!-- loader card start -->
+    <div *ngIf="isLoading" class="col-md-3">
+        <div class="card borderAll">
+            <div class="row">
+                <div class="col-md-12 bck-TitleTodoNotesLoading">
+                </div>
+                <div class="col-md-12 bck-TodoNotes">
+                    <div class="col-md-6 push-img-loader">
+                        <span>
+                            <img src="assets/img/loaders/ellipse-loader.gif" class="loaderHeigth">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- loader card end -->
+    <div *ngFor="let todoNote of todoList; let i=index" class="col-md-3">
+       <!-- todoNote create start -->
+        <div class="card borderAll">
+            <div class="row">
+                <div class="col-10 bck-TitleTodoNotes">
+                    <h1 class="fontTodoTitle text-left">{{todoNote.title}}</h1>
+                </div>
+                <div class="col-2 bck-TitleTodoNotes">
+                    <button (click)="deleteTodoNote(i)" class="float-top float-right btn btn-raised bck-TitleTodoNotes">X</button>
+                </div>
+            </div>
+            <div class="row bck-TodoNotes">
+                <div class="col-12">
+                    <span>
+                        {{todoNote.description}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- todoNote create end -->
+</div>

@@ -1,0 +1,75 @@
+.push-textfield{
+    left: 37%;
+
+    &-newgame{
+    left: 43%;
+    }
+
+}
+
+.text-red{
+    color: red;
+}
+
+.push-lives{ 
+    left: 33%;
+
+    &-loader{
+    left: 39%;
+    }
+
+}
+
+.push-textlives{
+    left: 45%;
+}
+
+#lives-img-animate{
+    -webkit-animation: animatelogo 2s infinite; /* Safari 4+ */
+    -moz-animation:    animatelogo 2s infinite; /* Fx 5+ */
+    -o-animation:      animatelogo 2s infinite; /* Opera 12+ */
+    animation:         animatelogo 2s infinite; /* IE 10+ */
+}
+
+
+/* Animations */
+@-webkit-keyframes animatelogo {
+    0%,100% {
+          transform: translateY(0px);
+          -webkit-transform: translateY(0px); 
+      }
+    50% {
+          transform: translateY(20px);
+          -webkit-transform: translateY(20px); 
+      }
+  }
+  @-moz-keyframes animatelogo {
+    0%,100% {
+          transform: translateY(0px);
+          -webkit-transform: translateY(0px); 
+      }
+    50% {
+          transform: translateY(20px);
+          -webkit-transform: translateY(20px); 
+      }
+  }
+  @-o-keyframes animatelogo {
+    0%,100% {
+          transform: translateY(0px);
+          -webkit-transform: translateY(0px); 
+      }
+    50% {
+          transform: translateY(20px);
+          -webkit-transform: translateY(20px); 
+      }
+  }
+  @keyframes animatelogo {
+    0%,100% {
+          transform: translateY(0px);
+          -webkit-transform: translateY(0px); 
+      }
+    50% {
+          transform: translateY(20px);
+          -webkit-transform: translateY(20px); 
+      }
+  }

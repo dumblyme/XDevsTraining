@@ -1,0 +1,51 @@
+.mainBackground{
+    background-color:rgb(0,102,0);
+}
+.whiteFont{
+    color: white;
+}
+.blackFont{
+    color: black;
+}
+.fontTodoTitle{
+    color: rgb(255, 255, 255);
+    font-family: 'Segoe UI';
+}
+.font24{
+    font-size: 24px;
+}
+.font50{
+    font-size: 12px;
+}
+.fontHandWrite{
+    font-family:Bradley Hand ITC;
+    font-weight: bold;
+
+}
+.btn-bg{
+    background-color: rgb(0,204,51);
+}
+.bck-TodoNotes{
+    background-color: khaki;
+    min-height: 100px;
+}
+.borderAll{
+    border: white 5px solid;
+}
+.bck-TitleTodoNotes{
+    background-color: rgb(236, 214, 14);   
+}
+.push-1{
+    left: 6.1%;
+}
+.push-img-loader{
+    left : 19%;
+}
+.bck-TitleTodoNotesLoading{
+    background-color: rgb(236, 214, 14);   
+    min-height: 57px;
+    // height: 100px;
+}
+.loaderHeigth{
+    width: 140%;
+}
