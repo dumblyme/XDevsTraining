@@ -4,6 +4,7 @@ import { MainDashboardComponent } from './main-dashboard/main-dashboard.componen
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { MysteryNumberComponent } from './mystery-number/mystery-number.component';
+import { BibleVerseGeneratorComponent } from './bible-verse-generator/bible-verse-generator.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,19 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: MainDashboardComponent,
+        data: {
+          title: 'SSSSS'
+        }
+      }
+    ]
+  },
+
+  {
+    path: '',
+    children: [
+      {
+        path: 'bible-verse-generator',
+        component: BibleVerseGeneratorComponent,
         data: {
           title: 'SSSSS'
         }

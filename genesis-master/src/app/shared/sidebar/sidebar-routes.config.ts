@@ -10,14 +10,21 @@ export const ROUTES: RouteInfo[] = [
         submenu: [
             {
                 // 'ft-credit-card'
-                path: '/todo-list', title: 'Todo list', icon: '' , class: '', badge: '', badgeClass: '', isExternalLink: false, permittedRoles: [], submenu: []
+                path: '/todo-list', title: 'Todo list', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, permittedRoles: [], submenu: []
             },
             {
                 path: '/mystery-number', title: 'Mystery number', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, permittedRoles: [], submenu: []
             }
         ]
+    },
+    {
+        path: '', title: 'My Sample Apps', icon: 'ft-feather', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false, permittedRoles: [],
+        submenu: [
+            {
+                path: '/bible-verse-generator', title: 'Bible App', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, permittedRoles: [], submenu: []
+            }
+        ]
     }
-
 
 
 

@@ -1,18 +1,39 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoListService } from '../../../services/todo-list/todo-list.service';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
   todoList: any[] = [];
   todo: any = {};
   todoTitle: string;
   todoDescription: string;
   isLoading = false;
 
-  constructor() { }
+  constructor(
+    public _todoService: TodoListService
+  ) { }
+
+  ngOnInit() {
+    let _out = this;
+    _out.isLoading = true;
+    let subscription = this._todoService.getTodo().subscribe(
+      (response: any) => {
+        _out.todoList = response;
+        subscription.unsubscribe();
+        _out.isLoading = false;
+      },
+      (error) => {
+        console.log(error);
+        alert("Something went wrong when fetching data");
+        subscription.unsubscribe();
+        _out.isLoading = false;
+      }
+    );
+  }
 
   addTodoNote() {
     this.toggleLoading(this.isLoading);

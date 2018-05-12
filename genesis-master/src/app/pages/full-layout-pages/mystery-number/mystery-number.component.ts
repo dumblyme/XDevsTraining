@@ -12,6 +12,8 @@ export class MysteryNumberComponent {
   message: string = "";
   isLoading = false;
 
+  
+
   generateNewMysteryNumber() {
     this.mysteryNumber = Math.round(Math.random() * 100);
   }
@@ -22,7 +24,7 @@ export class MysteryNumberComponent {
   }
 
   showLives(index) {
-    return index == 1 ? ["heart.png","lives-img-animate"] : ["heart-destroyed.png",""];
+    return index == 1 ? ["heart.png", "lives-img-animate"] : ["heart-destroyed.png", ""];
   }
 
   checkIfGuessed() {
@@ -44,16 +46,14 @@ export class MysteryNumberComponent {
 
   play() {
     this.Loading();
-    this.decreaseLife();
-    var isNoLivesLeft = this.checkIfNoLivesLeft();
-    var isGuessed = this.checkIfGuessed();
     setTimeout(() => {
-      if (isNoLivesLeft) {
-        this.gameOver();
+      if (this.checkIfGuessed()) {
+        this.gameWon();
       }
       else {
-        if (isGuessed) {
-          this.gameWon();
+        this.decreaseLife();
+        if (this.checkIfNoLivesLeft()) {
+          this.gameOver();
         } else {
           this.gameContinue();
         }
@@ -61,6 +61,7 @@ export class MysteryNumberComponent {
       this.notLoading();
       this.userGuessNumber = null;
     }, 1 * 1000);
+
   }
 
   gameOver() {
@@ -75,7 +76,8 @@ export class MysteryNumberComponent {
   }
 
   gameContinue() {
-    this.userGuessNumber > this.mysteryNumber ? this.message = "Your number is greater than the msytery number ": this.message = "Your number is lesser than the msytery number";
+    this.userGuessNumber > this.mysteryNumber ? this.message = "Your number is greater than the msytery number " : this.message = "Your number is lesser than the msytery number";
+    console.log(this.mysteryNumber);
   }
 
   gameReset() {
